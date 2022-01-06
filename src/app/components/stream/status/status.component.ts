@@ -27,6 +27,7 @@ export class StatusComponent implements OnInit {
 
     // statusAccountName: string;
     statusContent: string;
+    replyTo: string;
 
     reblog: boolean;
     hasAttachments: boolean;
@@ -77,6 +78,10 @@ export class StatusComponent implements OnInit {
 
         this.checkLabels(this.displayedStatus);
         this.setContentWarning(this.displayedStatusWrapper);
+
+        if (this.displayedStatus.mentions) {
+          this.replyTo = this.displayedStatus.mentions.map(mention => `@${mention.username}`).join(', ');
+        }
 
         if (!this.displayedStatus.account.display_name) {
             this.displayedStatus.account.display_name = this.displayedStatus.account.username;

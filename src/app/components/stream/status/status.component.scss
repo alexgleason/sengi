@@ -195,6 +195,12 @@
         min-height: 40px;
         // outline: 1px solid greenyellow;
     }
+
+    &__replying-to {
+      margin: 0 10px 0 70px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
 }
 
 .attachments {
